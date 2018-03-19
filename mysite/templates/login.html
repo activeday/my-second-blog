@@ -1,0 +1,119 @@
+<!--
+Author: Rango
+-->
+<!DOCTYPE HTML>
+{%extends 'base.html'%}
+{%load staticfiles%}
+{%block content%}
+{% load socialaccount %}
+{% providers_media_js %}
+<html>
+
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '432324400541225',
+      xfbml      : true,
+      version    : 'v2.12'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- banner -->
+
+		<!-- banner -->
+
+<div class="login-page">
+		<div class="container">
+			<div class="account_grid">
+				<div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
+					<h3>NEW CUSTOMERS</h3>
+					<p>Sign up to either add property, receive alerts for your ideal location and price range to find out about new places before anyone else.</p>
+					<a class="acount-btn" href="{% url 'signup' %}">Create an Account</a>
+			   </div>
+			   <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
+					<h3>REGISTERED CUSTOMERS</h3>
+					<p>If you have an account with us, please log in.</p>
+					<form method="post">
+					{% csrf_token %}
+						<div>
+							<span>Profile name<label>*</label></span>
+							<input type="text" id="username" name="username" placeholder="eg patrick24" required> 
+						</div>
+						<div>
+							<span>Password<label>*</label></span>
+							<input type="password" id="password" name="password" minlength="4" required>
+						</div>
+						<a class="forgot" href="#">Forgot Your Password?</a>
+						<input type="submit" value="Login">
+						<a href="{% provider_login_url "facebook" method="js_sdk" %}">Login Button image</a>
+					</form>
+			   </div>	
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-2 deco">
+				<h4>Navigation</h4>
+				<li><a href="{% url 'home' %}">Home</a></li>
+				<li><a href="{% url 'login' %}">Login </a></li>
+				<li><a href="{% url 'signup' %}">Sign up</a></li> 
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="Terms.html">Terms and conditions</a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>Property Links</h4> 
+				<li><a href="#">Bungoma </a></li>
+				<li><a href="#">Kakamega </a></li>
+				<li><a href="#">Busia </a></li>
+				<li><a href="#">Kitale </a></li>
+				<li><a href="#">Kanduyi </a></li>
+				<li><a href="#">Malaba </a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>Social</h4>
+				<div class="soci">
+					<li><a href="#"><i class="f-1"> </i></a></li>
+					<li><a href="#"><i class="t-1"> </i></a></li>
+					<li><a href="#"><i class="g-1"> </i></a></li>
+				</div>
+			</div>
+			<div class="col-md-3 cardss">
+				<h4>Payment Sécure</h4>
+				<img src="{% static 'images/mpesa1.png'%}" class="img-responsive" alt="">
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-3 pos">
+			<h4>NewsLetter</h4>
+					   <form method="post">
+						 <input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+						 <div class="smt">
+							<input type="submit" value="Subscribe">
+						 </div>
+					   </form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+			<div class="container">
+				<p>© 2018 Property. All Rights Reserved | Design by  <a href="" target="_blank">Connect24</a> </p>
+			</div>
+		</div>
+	<!-- footer -->
+</body>
+</html>
+{%endblock%}

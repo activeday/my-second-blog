@@ -1,0 +1,100 @@
+<!--
+Author: Emmanuel Wamalwa
+
+-->
+{%extends 'base1.html'%}
+{%load static%}
+<!DOCTYPE HTML>
+{%block content%}
+<html>
+
+<body>
+<!-- banner -->
+	
+		<!-- banner -->
+<!-- details -->
+	<div class="details">
+		<div class="container">
+			<div class="col-md-7 details-left">
+				<img src="{{object.apartment_image.url}}" class="img-responsive" alt="" style="width:100%">
+			</div>
+			<div class="col-md-5 details-right">
+				<span><strong>{{object.apartment_name}}</strong></span>
+				<li> Type  : {{object.apartment_type}}</li>
+				<li>Monthly rent :  {{object.rent}} Ksh</li>
+				<li>County : {{object.county}}</li>
+				<li>Location : {{object.location}}</li>
+				<li> Description : {{object.description}}.</li>
+			</div>
+			<div class="clearfix"> </div>
+			<div class="details-top">
+			<!--	<h3>Lorem Ipsum has been the industry's standard dummy tex</h3>
+				<h5>Buy the online room booking, save 2 euro and skip the line!</h5> -->
+				<h6>Validity : from {{object.uploaded_at}}</h6>
+				<h4>Contact details</h4>
+				<li>First name : </li>
+				<li>Phone number : {{object.phone}}</li>
+				<li>Email  :  </li>
+				<!--<h4>Not included</h4>
+				<li> will uncover many web sites still in their infancy. Various versions have evolved over the years,</li> -->
+				<h4>Additional information</h4>
+				<p></p>
+			</div>
+
+		 </div>
+	</div>
+<!-- details -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-2 deco">
+			<h4>Navigation</h4>
+				<li><a href="{% url 'home' %}">Home</a></li>
+				<li><a href="{% url 'login' %}">Login </a></li>
+				<li><a href="{% url 'signup' %}">Sign up</a></li> 
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="Terms.html">Terms and conditions</a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>Property Links</h4> 
+				<li><a href="#">Bungoma </a></li>
+				<li><a href="#">Kakamega </a></li>
+				<li><a href="#">Busia </a></li>
+				<li><a href="#">Kitale </a></li>
+				<li><a href="#">Kanduyi </a></li>
+				<li><a href="#">Malaba </a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>Social</h4>
+				<div class="soci">
+					<li><a href="#"><i class="f-1"> </i></a></li>
+					<li><a href="#"><i class="t-1"> </i></a></li>
+					<li><a href="#"><i class="g-1"> </i></a></li>
+				</div>
+			</div>
+			<div class="col-md-3 cardss">
+				<h4>Payment Sécure</h4>
+				<img src="{% static 'images/mpesa1.png'%}" class="img-responsive" alt="">
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-3 pos">
+			<h4>NewsLetter</h4>
+					   <form method="post">
+						 <input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+						 <div class="smt">
+							<input type="submit" value="Subscribe">
+						 </div>
+					   </form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+			<div class="container">
+				<p>© 2018 West Property. All Rights Reserved | Design by  <a href="" target="_blank">Connect24</a> </p>
+			</div>
+		</div>
+	<!-- footer -->
+</body>
+</html>
+{%endblock%}

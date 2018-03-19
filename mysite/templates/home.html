@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% block content %}
+{%load static%}
+<body>
+<!-- banner -->
+	
+	<!-- banner -->
+	<!-- hod -->
+	<div class="hod">
+		<div class="container">
+	
+			<div class="col-md-6 hod-left">
+				<img src="{% static 'images/properties2.jpg'%}" class="img-responsive" alt="">
+				
+			</div>
+			
+			<div class="col-md-6 hod-right">
+				<h2>Property marketing portal.</h2>
+				<p>As Western Kenya’s number 1 property portal, we’re passionate about helping people find their perfect homes,hotel rooms, shops,stalls and more. In addition, we provide Western Kenya’s Real Estate Industry with an unparalleled brand-building and marketing platform, with powerful opportunities to connect with buyers, renters and sellers searching for property online.  </p>
+				<p>We pride ourselves on delivering a great user experience and innovative search tools, so if you have any feedback you’d like to give us, we’d love to hear from you. </p>
+				<a class="hvr-shutter-in-horizontal" href="details.html">Get in touch</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- hod -->
+	<!-- tels -->
+	<div class="tels">
+		<div class="container">
+			<div class="col-md-4 tels-left">
+				<h4>Why use Connect<span>24</span></h4>
+				<img src="{% static 'images/marketing.jpg'%}" class="img-responsive" alt="">
+				<p>Sign up with Connect24 and market your properties on Western Kenya's leading property portal.</p>
+				<a class="hvr-shutter-in-horizontal" href="{% url 'signup' %}">Sign up</a>
+			</div>
+			<div class="col-md-4 tels-left">
+				<h4>List on Connect<span>24</span></h4>
+				<img src="{% static 'images/mobile.jpg'%}" class="img-responsive" alt="">
+				<p>Create and edit your listings from your computer or mobile phone easily.</p>
+				<a class="hvr-shutter-in-horizontal" href="{% url 'login' %}">Login</a>
+			</div>
+			<div class="col-md-4 tels-left">
+				<h4>Get connected<span></span></h4>
+				<img src="{% static 'images/connect.png'%}" class="img-responsive" alt="">
+				<p>View property with contact details  anywhere in Western Kenya at the comfort of your sofa.</p>
+				<!--<a class="hvr-shutter-in-horizontal" href="details.html">Book Now</a> -->
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- tels -->
+	<!-- special -->
+<!--	<div class="special">
+		<div class="container">
+			<div class="spe-info">
+				<h3>Special Offer</h3>
+				<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+			</div>
+		</div>
+	</div> -->
+	<!-- special -->
+	<!-- quick -->
+	<div class="quick">
+		<div class="container">
+			<div class="col-md-4 quick-left">
+				<h3>Most Popular</h3>
+					<ul>
+						<li><a href="#">Bungoma</a></li>
+						<li><a href="#">Kakamega</a></li>
+						<li><a href="#">Busia</a></li>
+						<li><a href="#">Kimilili</a></li>
+						<li><a href="#">Malaba</a></li>
+						<li><a href="#">Kitale</a></li>
+						
+					</ul>
+					<div class="clearfix"></div>
+			</div>
+			<!--<div class="col-md-4 quick-left">
+				<h3>News & Events</h3>
+				<div class="new">
+					<div class="n-lft">
+						<h5>10</h5>
+						<h6>Sep</h6>
+					</div>
+					<div class="n-rgt">
+						<p>Lorem Ipsum is that it has a more-or-less normal<a href="#">More</a></p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="new-1">
+					<div class="n-lft">
+						<h5>15</h5>
+						<h6>Sep</h6>
+					</div>
+					<div class="n-rgt">
+						<p>That it has a more-or-less normal distribution<a href="#">More</a></p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div> -->
+			<div class="col-md-4 quick-left">
+				<h3>Quick Message</h3>
+					<form>
+						<input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+						<textarea placeholder="" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+						<input type="submit" value="Submit">
+					</form>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- quick -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-2 deco">
+			<h4>Navigation</h4>
+				<li><a href="{% url 'home' %}">Home</a></li>
+				<li><a href="{% url 'login' %}">Login </a></li>
+				<li><a href="{% url 'signup' %}">Sign up</a></li> 
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="Terms.html">Terms and conditions</a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>Property Links</h4> 
+				<li><a href="#">Bungoma </a></li>
+				<li><a href="#">Kakamega </a></li>
+				<li><a href="#">Busia </a></li>
+				<li><a href="#">Kitale </a></li>
+				<li><a href="#">Kanduyi </a></li>
+				<li><a href="#">Malaba </a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>Social</h4>
+				<div class="soci">
+					<li><a href="#"><i class="f-1"> </i></a></li>
+					<li><a href="#"><i class="t-1"> </i></a></li>
+					<li><a href="#"><i class="g-1"> </i></a></li>
+				</div>
+			</div>
+			<div class="col-md-3 cardss">
+				<h4>Payment Sécure</h4>
+				<img src="{% static 'images/mpesa1.png'%}" class="img-responsive" alt="">
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-3 pos">
+			<h4>NewsLetter</h4>
+					   <form method="post">
+						 <input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+						 <div class="smt">
+							<input type="submit" value="Subscribe">
+						 </div>
+					   </form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+			<div class="container">
+				<p>© 2018 West Property. All Rights Reserved | Design by  <a href="" target="_blank">Connect24</a> </p>
+			</div>
+		</div>
+	<!-- footer -->
+</body>
+{% endblock %}

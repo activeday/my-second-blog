@@ -1,0 +1,87 @@
+
+<!DOCTYPE HTML>
+{%extends 'base1.html'%}
+{%block content%}
+{%load static%}
+<html>
+
+<body>
+<!-- banner -->
+	
+		<!-- banner -->
+<!-- offers -->
+	<div class="offers">
+	{%if filter.qs%}
+		<div class="container">
+		{%for item in filter.qs%}
+			<div class="col-md-4 offers-left">
+				<h3>{{item.county}}</h3>
+				<img src="{{item.apartment_image.url}}" class="img-responsive" alt="">
+				<h4>{{item.rent}}Ksh.</h4>
+				<p>{{item.location}}.</p>
+				<a class="hvr-shutter-in-horizontal" href="{%url 'detail' item.id%}">more details</a>
+			</div>
+			{%endfor%}
+
+			<div class="clearfix"></div>
+{%else%}
+<p> No results found. </p>
+{%endif%}
+		 </div>
+	</div>
+<!-- offers -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-2 deco">
+			<h4>Navigation</h4>
+				<li><a href="{% url 'home' %}">Home</a></li>
+				<li><a href="{% url 'login' %}">Login </a></li>
+				<li><a href="{% url 'signup' %}">Sign up</a></li> 
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="Terms.html">Terms and conditions</a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>Property Links</h4> 
+				<li><a href="#">Bungoma </a></li>
+				<li><a href="#">Kakamega </a></li>
+				<li><a href="#">Busia </a></li>
+				<li><a href="#">Kitale </a></li>
+				<li><a href="#">Kanduyi </a></li>
+				<li><a href="#">Malaba </a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>Social</h4>
+				<div class="soci">
+					<li><a href="#"><i class="f-1"> </i></a></li>
+					<li><a href="#"><i class="t-1"> </i></a></li>
+					<li><a href="#"><i class="g-1"> </i></a></li>
+				</div>
+			</div>
+			<div class="col-md-3 cardss">
+				<h4>Payment Sécure</h4>
+				<img src="{% static 'images/mpesa1.png'%}" class="img-responsive" alt="">
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-3 pos">
+			<h4>NewsLetter</h4>
+					   <form method="post">
+						 <input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+						 <div class="smt">
+							<input type="submit" value="Subscribe">
+						 </div>
+					   </form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+			<div class="container">
+				<p>© 2018 Property. All Rights Reserved | Design by  <a href="" target="_blank">Connect24</a> </p>
+			</div>
+		</div>
+	<!-- footer -->
+
+</body>
+</html>
+{%endblock%}

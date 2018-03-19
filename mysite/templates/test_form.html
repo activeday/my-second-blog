@@ -1,0 +1,164 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+
+<style type="text/css">
+ .register-but{
+   margin-top:1em;
+}
+.register-but input[type="submit"] {
+  background: #553A99;
+  color: #FFF;
+  font-size: 1.2em;
+  padding: 0.4em 1.5em;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  display: inline-block;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+}
+
+</style>
+<html>
+<body>
+<!-- banner -->
+	
+		<!-- banner -->
+<!-- registration -->
+	<div class="main-1">
+		<div class="container">
+			<div class="register">
+		  	  <form enctype="multipart/form-data" method="post" id = "image_form" > 
+			  {% csrf_token %}
+				 <div class="register-top-grid">
+					<h3>ADD APARTMENT</h3>
+					 <div class="wow fadeInLeft" data-wow-delay="0.4s">
+						<span>Apartment Name<label>*</label></span>
+						<input type="text" id="apartment_name" name="apartment_name" placeholder="eg patrick apartments" maxlength="20" required> 
+					 </div>
+					 <div class="wow fadeInRight" data-wow-delay="0.4s">
+						<span>Apartment type<label>*</label></span>
+						<select id="apartment_type" name="apartment_type" onchange="change_apartment_type(this.value)" class="frm-field required">
+								<option value="Single bedroom"> Single bedroom</option>
+								<option value="Two bedroom">Two bedroom</option>         
+								<option value="Three bedroom">Three bedroom</option>
+								<option value="Other">Other</option>
+							 </select>
+					 </div>
+					 <div class="wow fadeInRight" data-wow-delay="0.4s">
+						 <span>County<label>*</label></span>
+						 <select id="county" name ="county" onchange="change_county(this.value)" class="frm-field required">
+								<option value="Bungoma"> Bungoma</option>
+								<option value="Kakamega">Kakamega</option>         
+								<option value="Busia">Busia</option>
+								<option value="Tranzoia">Tranzoia</option>
+							 </select>
+					 </div>
+					 <div class="wow fadeInRight" data-wow-delay="0.4s">
+						 <span>Rent in Ksh<label>*</label></span>
+						 <input type="text" id="rent" name="rent" placeholder="eg 15000" maxlength="20" required>  
+					 </div>
+					 <div class="wow fadeInRight" data-wow-delay="0.4s">
+						 <span>Location<label>*</label></span>
+						 <input type="text" id="location" name="location" placeholder="eg kandui" maxlength="20" required>  
+					 </div>
+					 <div class="wow fadeInRight" data-wow-delay="0.4s">
+						 <span>Phone number<label>*</label></span>
+						 <input type="text" id="phone" name="phone" placeholder="eg 0724650346" maxlength="10" required>
+					 </div>
+					  <div class="wow fadeInRight" data-wow-delay="0.4s">
+						 <span>Other description<label>*</label></span>
+						 <textarea id="description" name="description" value="Message:" maxlength="50" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Describe..</textarea> 
+					 </div>
+					  <div class="wow fadeInRight" data-wow-delay="0.4s">
+						 <span>Apartment image<label>*</label></span>
+						 <input type="file" id="apartment_image" name="apartment_image"> 
+					 </div>
+					
+					 <div class="clearfix"> </div>
+					<!--   <a class="news-letter" href="#">
+						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
+					   </a> -->
+					 </div>
+				<!--     <div class="register-bottom-grid">
+						    <h3>LOGIN INFORMATION</h3>
+							 <div class="wow fadeInLeft" data-wow-delay="0.4s">
+								<span>Password<label>*</label></span>
+								<input type="password">
+							 </div>
+							 <div class="wow fadeInRight" data-wow-delay="0.4s">
+								<span>Confirm Password<label>*</label></span>
+								<input type="password">
+							 </div>
+					 </div> -->
+					 
+					 <div class="clearfix"> </div>
+					<div class="register-but">
+				   
+					   <input type="submit" value="submit">
+					   <div class="clearfix"> </div>
+				  
+				</div>
+				</form>
+				
+		   </div>
+		 </div>
+	</div>
+<!-- registration -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-2 deco">
+			<h4>Navigation</h4>
+				<li><a href="{% url 'home' %}">Home</a></li>
+				<li><a href="{% url 'login' %}">Login </a></li>
+				<li><a href="{% url 'signup' %}">Sign up</a></li> 
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="Terms.html">Terms and conditions</a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>Property Links</h4> 
+				<li><a href="#">Bungoma </a></li>
+				<li><a href="#">Kakamega </a></li>
+				<li><a href="#">Busia </a></li>
+				<li><a href="#">Kitale </a></li>
+				<li><a href="#">Kanduyi </a></li>
+				<li><a href="#">Malaba </a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>Social</h4>
+				<div class="soci">
+					<li><a href="#"><i class="f-1"> </i></a></li>
+					<li><a href="#"><i class="t-1"> </i></a></li>
+					<li><a href="#"><i class="g-1"> </i></a></li>
+				</div>
+			</div>
+			<div class="col-md-3 cardss">
+				<h4>Payment Sécure</h4>
+				<img src="{% static 'images/mpesa1.png'%}" class="img-responsive" alt="">
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-3 pos">
+			<h4>NewsLetter</h4>
+					   <form method="post">
+						 <input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+						 <div class="smt">
+							<input type="submit" value="Subscribe">
+						 </div>
+					   </form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+			<div class="container">
+				<p>© 2018 West Property. All Rights Reserved | Design by  <a href="" target="_blank">Connect24</a> </p>
+			</div>
+		</div>
+	<!-- footer -->
+	</body>
+</html>
+  {%endblock%}

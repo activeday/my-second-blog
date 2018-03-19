@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+ {%load static%}
+ {%block content%}
+  <ul>
+  {% for item in filter.qs %}
+    <li>{{ item.county}} --{{item.rent}} --{{item.location}}--{{item.uploaded_at}} </li>
+	<img src="{{item.apartment_image.url}}" class="img-responsive" alt="">
+	<a class="hvr-shutter-in-horizontal" href="{%url 'detail' item.id%}">more details</a>
+  {% endfor %}
+  </ul>
+  {%endblock%}
